@@ -1,0 +1,1 @@
+"""Standalone repository coding agent."""

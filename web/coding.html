@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Pegasus Code</title>
+    <link rel="stylesheet" href="/coding.css">
+</head>
+<body>
+    <main class="shell">
+        <header class="topbar">
+            <a class="brand" href="/" aria-label="Pegasus Code home">
+                <span class="brand-mark">&gt;_</span>
+                <span>Pegasus <strong>Code</strong></span>
+            </a>
+            <div class="workspace-card">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span id="model-label">Connecting to coding agent…</span>
+                <span class="divider">/</span>
+                <span id="workspace-label">Loading workspace…</span>
+            </div>
+            <button id="new-session" class="quiet-button" type="button">New task</button>
+        </header>
+
+        <section class="content">
+            <div class="intro">
+                <p class="eyebrow">LOCAL REPOSITORY AGENT</p>
+                <h1>What should we build?</h1>
+                <p class="subtitle">Describe a coding task. Autopilot inspects the workspace, makes the change, and runs relevant tests without stopping for routine choices.</p>
+            </div>
+
+            <section id="conversation" class="conversation" aria-live="polite" aria-label="Conversation">
+                <article class="message assistant">
+                    <div class="avatar" aria-hidden="true">P</div>
+                    <div class="message-body">
+                        <div class="message-label">Pegasus Code</div>
+                        <div class="message-text">I can inspect and edit files inside the configured workspace. Test commands run locally in that workspace.</div>
+                    </div>
+                </article>
+            </section>
+
+            <form id="prompt-form" class="composer">
+                <label class="sr-only" for="prompt">Describe a coding task</label>
+                <textarea id="prompt" rows="3" maxlength="20000" placeholder="e.g. Add a CSV import command with validation and tests…" required></textarea>
+                <div class="composer-footer">
+                    <span>Enter to send · Shift+Enter for a new line</span>
+                    <button id="send-button" class="send-button" type="submit">
+                        <span>Send task</span>
+                        <span aria-hidden="true">↗</span>
+                    </button>
+                </div>
+            </form>
+            <p id="notice" class="notice" role="status">Runs locally. Review changes and test output before using them.</p>
+        </section>
+    </main>
+    <script src="/coding.js" defer></script>
+</body>
+</html>
